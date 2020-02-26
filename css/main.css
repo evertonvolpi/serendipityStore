@@ -1,3 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Sacramento|Spartan&display=swap");
+header {
+  background-image: url("../img/background.png");
+  background-position: center;
+  height: 110px;
+  background-size: 100%;
+  text-align: center;
+}
 
+header div {
+  height: 10vh;
+}
+
+h1 {
+  display: block;
+  position: absolute;
+  left: 37vw;
+  font-size: 5.5rem;
+  font-family: "Sacramento";
+  color: #214254;
+  text-shadow: 1px 1px 0 #edf2f1;
+  margin: 0px;
+}
+
+h3 {
+  display: block;
+  position: absolute;
+  padding-top: 80px;
+  left: 40vw;
+  font-size: 2.5rem;
+  font-family: "Amatic SC";
+  color: #214254;
+  text-shadow: 1px 1px 0 #edf2f1;
+  margin: 0px;
+}
+
+p {
+  font-family: "Amatic SC";
+}
+
+@media (max-width: 768px) {
+  h1 {
+    left: 25vw;
+  }
+
+  h3 {
+    left: 30vw;
+  }
+}
+@media (max-width: 576px) {
+  h1 {
+    left: 15vw;
+  }
+
+  h3 {
+    left: 20vw;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

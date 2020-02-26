@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Sacramento|Spartan&display=swap');
+
+$dark: hsl(203, 10%, 25%);
+$light: hsl(168, 16%, 94%);
+$brown: hsl(8, 18%, 36%);
+$red: hsl(357, 64%, 55%);
+$blue: hsl(201, 43%, 53%);
+$darkBlue: hsl(201, 43%, 23%);
+
+
+
+header {
+    // display: flex;
+    background-image: url('../img/background.png');
+    background-position: center;
+    height: 110px;
+    background-size: 100%;
+    text-align: center;
+}
+
+header div {
+    height: 10vh;
+}
+
+h1 {
+    display: block;
+    position: absolute;
+    left: 37vw;
+    font-size: 5.5rem;
+    font-family: 'Sacramento';
+    color: $darkBlue;
+    text-shadow: 1px 1px 0 $light;
+    margin: 0px;
+}
+
+h3 {
+    display: block;
+    position: absolute;
+    // top: 6rem;
+    padding-top: 80px;
+    left: 40vw;
+    font-size: 2.5rem;
+    font-family: 'Amatic SC';
+    color: $darkBlue;
+    text-shadow: 1px 1px 0 $light;
+    margin: 0px;
+    // padding-right: 10%;
+}
+
+p {
+    font-family: 'Amatic SC';
+}
+
+@media (max-width: 768px) {
+    h1 {
+        left: 25vw;
+    }
+
+    h3 {
+        left: 30vw;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        left: 15vw;
+    }
+
+    h3 {
+        left: 20vw;
+    }
+}
