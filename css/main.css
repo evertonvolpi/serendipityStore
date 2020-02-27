@@ -8,6 +8,10 @@ html {
   background-color: #edf2f1;
 }
 
+.hide {
+  display: none;
+}
+
 .container-fluid {
   padding: 0px !important;
   margin: 0px !important;
@@ -96,6 +100,31 @@ html {
   text-align: center;
 }
 
+.container-fluid .hideShowCart {
+  text-decoration: none;
+  color: #394146;
+}
+
+.container-fluid .hideShowCart:hover {
+  transform: scale(1.1);
+}
+
+.container-fluid .showCart {
+  float: right;
+  padding-right: 1rem;
+}
+
+.container-fluid .cart {
+  position: sticky;
+  top: 0;
+  float: right;
+  font-family: "Amatic SC";
+  background-color: white;
+  box-shadow: 0 0 10px #394146;
+  height: 15rem;
+  width: 15rem;
+}
+
 .container-fluid main .about {
   border-top: 0.1px solid #394146;
   border-bottom: 0.1px solid #394146;
@@ -120,8 +149,18 @@ html {
   max-width: 50%;
 }
 
+.container-fluid main .products .selection .radioButtons {
+  display: inline-block;
+  text-align: center;
+}
+
+.container-fluid main .products .selection .radioButtons div {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
 input[type=number] {
-  width: 2rem;
+  width: 1.5rem;
   text-align: center;
   border-radius: 1px;
 }
@@ -133,6 +172,21 @@ input[type=number]::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield !important;
+}
+
+.container-fluid main .products .selection .quantity p {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.container-fluid main .products .selection .addToCart {
+  padding: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.container-fluid main .products .selection .addToCart:hover {
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -151,6 +205,12 @@ input[type=number] {
 
   .container-fluid header h3 {
     left: 20vw;
+  }
+
+  .container-fluid main .products .selection .radioButtons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 }
 @media (max-height: 450px) {

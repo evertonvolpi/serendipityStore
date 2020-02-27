@@ -39,68 +39,87 @@
             <h3>special breads</h3>
         </header>
 
-        <main class="container">
+        <div class="showCart">
+            <i class="hideShowCart fas fa-shopping-cart"></i>
+        </div>
+        
+        <div class="cart hide" id="cart">
+            <i class="hideShowCart fas fa-shopping-cart"></i>
+            <p>this product</p>
+        </div>
+
+        <main class="container">            
             <div class="about">
                 <p>Serendipity Special Breads started as Serendipity P<span>&#xE3</span>es Especiais in the city of Florian<span>&#xF3</span>polis, Brazil. Since the beggining, we have been using the best fresh ingredients and baking every batch to be the best batch ever made in the history of baking! We do not use any kind of industrial flavoring or food coloring. Everything is made the way old fashioned way, with some help of our best friend, of course: the cake mixer. Try one of our products and prepare yourself to become a dough addict!</p>
             </div>
             <div class="products">
                 <h3>Products</h3>
                 <div class="selection">
-                    <div class="item panetone">
+                    <div id="panetone">
                         <img src="img/panetone.png" alt="panetone cake">
                         <h4>Panetone</h2>
                         <p>Italian pastry that tastes like christmas! What do you prefer: chocolate or the classic milanese dried fruit panetone? Why not both!</p>
-                        <div class="buyPanetone">
+                        <div class="radioButtons">
                             <div>
-                                <input type="radio" name="flavour" value="chocolate" id="chocolate">
+                                <input type="radio" name="flavour" value="chocolate" id="chocolate" checked>
                                 <label for="chocolate">Chocolate</label>
+                            </div>
+                            <div>
                                 <input type="radio" name="flavour" value="driedFruits" id="driedFruits">
                                 <label for="driedFruits">Dried Fruits</label>
                             </div>
-                            <div class="quantity">
-                                <i class="decrease fas fa-minus" product="qtyPanetone"></i>
-                                <input type="number" name="quantity" id="qtyPanetone" min="1" value="1" product="panetone">
-                                <i class="increase fas fa-plus" product="qtyPanetone"></i>
-                            </div>
                         </div>
+                        <div class="quantity">
+                            <i class="decrease fas fa-minus" product="qtyPanetone" refreshValue="totalPanetone"></i>
+                            <input type="number" name="quantity" class="changeQty" id="qtyPanetone" min="1" value="1" refreshValue="totalPanetone">
+                            <i class="increase fas fa-plus" product="qtyPanetone" refreshValue="totalPanetone"></i>
+                            <p>&#x24 <span id="totalPanetone" price="20.35">20.35</span></p>
+                        </div>
+                        <i class="addToCart fas fa-cart-plus" ></i>
                     </div>
 
-                    <div class="item dijon">
+                    <div id="dijon">
                         <img src="img/dinjonBread.png" alt="dijon bread">
                         <h4>Dijon Bread</h2>
                         <p>Delicious dijon mustard bread. Try not to eat it all at once, I dare you!</p>
                         <div class="buyDijon">
                             <div class="quantity">
-                                <i class="decrease fas fa-minus" product="qtyDijon"></i>
-                                <input type="number" name="quantity" id="qtyDijon" min="1" value="1" product="panetone">
-                                <i class="increase fas fa-plus" product="qtyDijon"></i>
+                                <i class="decrease fas fa-minus" product="qtyDijon" refreshValue="totalDijon"></i>
+                                <input type="number" name="quantity" class="changeQty" id="qtyDijon" min="1" value="1" refreshValue="totalDijon">
+                                <i class="increase fas fa-plus" product="qtyDijon" refreshValue="totalDijon"></i>
+                                <p>&#x24 <span id="totalDijon" price="11.75">11.75</span></p>
                             </div>
+                            <i class="addToCart fas fa-cart-plus" ></i>
                         </div>
                     </div>
 
-                    <div class="item pesto">
+                    <div id="pesto">
                         <img src="img/pestoBread.png" alt="pesto bread">
                         <h4>Pesto Bread</h2>
                         <p>Prepared with fresh ingredients. Believe it when we say our pesto is the besto! Yes pun intended.</p>
                         <div class="buyPesto">
                             <div class="quantity">
-                                <i class="decrease fas fa-minus" product="qtyPesto"></i>
-                                <input type="number" name="quantity" id="qtyPesto" min="1" value="1" product="panetone">
-                                <i class="increase fas fa-plus" product="qtyPesto"></i>
+                                <i class="decrease fas fa-minus" product="qtyPesto" refreshValue="totalPesto"></i>
+                                <input type="number" name="quantity" class="changeQty" id="qtyPesto" min="1" value="1" refreshValue="totalPesto">
+                                <i class="increase fas fa-plus" product="qtyPesto" refreshValue="totalPesto"></i>
+                                <p>&#x24 <span id="totalPesto" price="14.30">14.30</span></p>
                             </div>
+                            <i class="addToCart fas fa-cart-plus" ></i>
                         </div>
                     </div>
 
-                    <div class="item garlic">
+                    <div id="garlic">
                         <img src="img/garlicBread.png" alt="garlic bread">
-                        <h4>Dijon Bread</h2>
+                        <h4>Garlic Bread</h2>
                         <p>If you are not a vampire, you will - you will - fall in love with these bad boys, we guarantee.</p>
                         <div class="buyGarlic">
                             <div class="quantity">
-                                <i class="decrease fas fa-minus" product="qtyGarlic"></i>
-                                <input type="number" name="quantity" id="qtyGarlic" min="1" value="1" product="panetone">
-                                <i class="increase fas fa-plus" product="qtyGarlic"></i>
+                                <i class="decrease fas fa-minus" product="qtyGarlic" refreshValue="totalGarlic"></i>
+                                <input type="number" name="quantity" class="changeQty" id="qtyGarlic" min="1" value="1" refreshValue="totalGarlic">
+                                <i class="increase fas fa-plus" product="qtyGarlic" refreshValue="totalGarlic"></i>
+                                <p>&#x24 <span id="totalGarlic" price="11.75">11.75</span></p>
                             </div>
+                            <i class="addToCart fas fa-cart-plus" ></i>
                         </div>
                     </div>
                 </div>
