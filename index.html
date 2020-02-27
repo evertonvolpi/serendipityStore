@@ -4,19 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>    
     <title>Serendipity</title>
 </head>
 <body>
-    <header>
-        <h1>Serendipity</h1>
-        <h3>special breads</h3>
-    </header>
-    <main>
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dicta, inventore excepturi, dignissimos, porro quas quae corporis expedita sequi error molestiae magni temporibus modi unde distinctio laudantium aut debitis repellendus.</p></div>
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dicta, inventore excepturi, dignissimos, porro quas quae corporis expedita sequi error molestiae magni temporibus modi unde distinctio laudantium aut debitis repellendus.</p></div>
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dicta, inventore excepturi, dignissimos, porro quas quae corporis expedita sequi error molestiae magni temporibus modi unde distinctio laudantium aut debitis repellendus.</p></div>
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dicta, inventore excepturi, dignissimos, porro quas quae corporis expedita sequi error molestiae magni temporibus modi unde distinctio laudantium aut debitis repellendus.</p></div>
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dicta, inventore excepturi, dignissimos, porro quas quae corporis expedita sequi error molestiae magni temporibus modi unde distinctio laudantium aut debitis repellendus.</p></div>
-    </main>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+            <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="socialMedia">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>                <a href="#"><i class="fab fa-github"></i></a>
+            </div>       
+        </nav>
+
+        <header>
+            <h1>Serendipity</h1>
+            <h3>special breads</h3>
+        </header>
+
+        <main class="container">
+            <div class="about">
+                <p>Serendipity Special Breads started as Serendipity P<span>&#xE3</span>es Especiais in the city of Florian<span>&#xF3</span>polis, Brazil. Since the beggining, we have been using the best fresh ingredients and baking every batch to be the best batch ever made in the history of baking! We do not use any kind of industrial flavoring or food coloring. Everything is made the way old fashioned way, with some help of our best friend, of course: the cake mixer. Try one of our products and prepare yourself to become a dough addict!</p>
+            </div>
+            <div class="products">
+                <h3>Products</h3>
+                <div class="selection">
+                    <div class="item panetone">
+                        <img src="img/panetone.png" alt="panetone cake">
+                        <h4>Panetone</h2>
+                        <p>Italian pastry that tastes like christmas! What do you prefer: chocolate or the classic milanese dried fruit panetone? Why not both!</p>
+                        <div class="buyPanetone">
+                            <div>
+                                <input type="radio" name="flavour" value="chocolate" id="chocolate">
+                                <label for="chocolate">Chocolate</label>
+                                <input type="radio" name="flavour" value="driedFruits" id="driedFruits">
+                                <label for="driedFruits">Dried Fruits</label>
+                            </div>
+                            <div class="quantity">
+                                <i class="decrease fas fa-minus" product="qtyPanetone"></i>
+                                <input type="number" name="quantity" id="qtyPanetone" min="1" value="1" product="panetone">
+                                <i class="increase fas fa-plus" product="qtyPanetone"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item dijon">
+                        <img src="img/dinjonBread.png" alt="dijon bread">
+                        <h4>Dijon Bread</h2>
+                        <p>Delicious dijon mustard bread. Try not to eat it all at once, I dare you!</p>
+                        <div class="buyDijon">
+                            <div class="quantity">
+                                <i class="decrease fas fa-minus" product="qtyDijon"></i>
+                                <input type="number" name="quantity" id="qtyDijon" min="1" value="1" product="panetone">
+                                <i class="increase fas fa-plus" product="qtyDijon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item pesto">
+                        <img src="img/pestoBread.png" alt="pesto bread">
+                        <h4>Pesto Bread</h2>
+                        <p>Prepared with fresh ingredients. Believe it when we say our pesto is the besto! Yes pun intended.</p>
+                        <div class="buyPesto">
+                            <div class="quantity">
+                                <i class="decrease fas fa-minus" product="qtyPesto"></i>
+                                <input type="number" name="quantity" id="qtyPesto" min="1" value="1" product="panetone">
+                                <i class="increase fas fa-plus" product="qtyPesto"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item garlic">
+                        <img src="img/garlicBread.png" alt="garlic bread">
+                        <h4>Dijon Bread</h2>
+                        <p>If you are not a vampire, you will - you will - fall in love with these bad boys, we guarantee.</p>
+                        <div class="buyGarlic">
+                            <div class="quantity">
+                                <i class="decrease fas fa-minus" product="qtyGarlic"></i>
+                                <input type="number" name="quantity" id="qtyGarlic" min="1" value="1" product="panetone">
+                                <i class="increase fas fa-plus" product="qtyGarlic"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>

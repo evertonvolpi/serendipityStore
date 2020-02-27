@@ -4,25 +4,76 @@ $dark: hsl(203, 10%, 25%);
 $light: hsl(168, 16%, 94%);
 $brown: hsl(8, 18%, 36%);
 $red: hsl(357, 64%, 55%);
-$blue: hsl(201, 43%, 53%);
+$blue: hsl(201, 43%, 43%);
 $darkBlue: hsl(201, 43%, 23%);
 
+* {
+    margin: 0px;
+    padding: 0px;
+}
 
+html {
+    background-color: $light;
+}
 
-header {
-    // display: flex;
+.container-fluid {
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: $light;
+}
+
+.navbar {
+    background-color: $light;
+}
+
+.navbar .socialMedia {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar .socialMedia i {
+    color: $darkBlue;
+    padding: 0 0.5rem;
+}
+
+.socialMedia i:hover {
+    transform: scale(1.1);
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    color: $blue;
+    padding: 0;
+    margin: 0.5rem 1rem;
+    font-family: 'Amatic SC';
+    font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    color: $dark;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link {
+    color: $darkBlue;
+    border-bottom: 2px solid $darkBlue;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-fluid header {
     background-image: url('../img/background.png');
     background-position: center;
-    height: 110px;
     background-size: 100%;
     text-align: center;
+    margin: 0 0 50px 0;
+    padding: 0px;
+    height: 20vh;
+    min-height: 70px;
 }
 
-header div {
-    height: 10vh;
-}
-
-h1 {
+.container-fluid header h1 {
     display: block;
     position: absolute;
     left: 37vw;
@@ -30,43 +81,109 @@ h1 {
     font-family: 'Sacramento';
     color: $darkBlue;
     text-shadow: 1px 1px 0 $light;
-    margin: 0px;
+    padding-top: 1rem;
 }
 
-h3 {
+.container-fluid header h3 {
     display: block;
     position: absolute;
-    // top: 6rem;
-    padding-top: 80px;
+    padding-top: 5.5rem;
     left: 40vw;
     font-size: 2.5rem;
     font-family: 'Amatic SC';
     color: $darkBlue;
     text-shadow: 1px 1px 0 $light;
     margin: 0px;
-    // padding-right: 10%;
 }
 
-p {
+.container-fluid main {
+    background-color: $light;
+    max-width: 80%;
+    align-content: center;
     font-family: 'Amatic SC';
+    text-align: center;
 }
+
+.container-fluid main .about {
+    border-top: 0.1px solid $dark;
+    border-bottom: 0.1px solid $dark;
+}
+
+.container-fluid main .about p {
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.container-fluid main .products .selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.container-fluid main .products h3 {
+    padding: 2rem 0 1rem 0;
+}
+
+.container-fluid main .products .selection img {
+    max-width: 50%;
+}
+
+input[type=number] {
+    width: 2rem;
+    text-align: center;
+    border-radius: 1px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+}
+
+input[type=number] {
+    -moz-appearance:textfield !important;
+}
+
+
+
 
 @media (max-width: 768px) {
-    h1 {
+    .container-fluid header h1 {
         left: 25vw;
     }
 
-    h3 {
+    .container-fluid header h3 {
         left: 30vw;
     }
 }
 
 @media (max-width: 576px) {
-    h1 {
+    .container-fluid header h1 {
         left: 15vw;
     }
 
-    h3 {
+    .container-fluid header h3 {
         left: 20vw;
+    }
+}
+
+@media (max-height: 450px) {
+    .container-fluid header h1 {
+        font-size: 3.5rem;
+    }
+
+    .container-fluid header h3 {
+        font-size: 1.5rem;
+        padding-top: 4rem;
+    }
+}
+
+@media (max-height: 300px) {
+    .container-fluid header h1 {
+        font-size: 2.5rem;
+    }
+
+    .container-fluid header h3 {
+        font-size: 1rem;
+        padding-top: 3rem;
     }
 }

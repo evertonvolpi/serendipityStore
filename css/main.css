@@ -1,17 +1,71 @@
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC|Sacramento|Spartan&display=swap");
-header {
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  background-color: #edf2f1;
+}
+
+.container-fluid {
+  padding: 0px !important;
+  margin: 0px !important;
+  background-color: #edf2f1;
+}
+
+.navbar {
+  background-color: #edf2f1;
+}
+
+.navbar .socialMedia {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar .socialMedia i {
+  color: #214254;
+  padding: 0 0.5rem;
+}
+
+.socialMedia i:hover {
+  transform: scale(1.1);
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  text-decoration: none;
+  color: #3f7c9d;
+  padding: 0;
+  margin: 0.5rem 1rem;
+  font-family: "Amatic SC";
+  font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #394146;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link {
+  color: #214254;
+  border-bottom: 2px solid #214254;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container-fluid header {
   background-image: url("../img/background.png");
   background-position: center;
-  height: 110px;
   background-size: 100%;
   text-align: center;
+  margin: 0 0 50px 0;
+  padding: 0px;
+  height: 20vh;
+  min-height: 70px;
 }
 
-header div {
-  height: 10vh;
-}
-
-h1 {
+.container-fluid header h1 {
   display: block;
   position: absolute;
   left: 37vw;
@@ -19,13 +73,13 @@ h1 {
   font-family: "Sacramento";
   color: #214254;
   text-shadow: 1px 1px 0 #edf2f1;
-  margin: 0px;
+  padding-top: 1rem;
 }
 
-h3 {
+.container-fluid header h3 {
   display: block;
   position: absolute;
-  padding-top: 80px;
+  padding-top: 5.5rem;
   left: 40vw;
   font-size: 2.5rem;
   font-family: "Amatic SC";
@@ -34,26 +88,89 @@ h3 {
   margin: 0px;
 }
 
-p {
+.container-fluid main {
+  background-color: #edf2f1;
+  max-width: 80%;
+  align-content: center;
   font-family: "Amatic SC";
+  text-align: center;
+}
+
+.container-fluid main .about {
+  border-top: 0.1px solid #394146;
+  border-bottom: 0.1px solid #394146;
+}
+
+.container-fluid main .about p {
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.container-fluid main .products .selection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.container-fluid main .products h3 {
+  padding: 2rem 0 1rem 0;
+}
+
+.container-fluid main .products .selection img {
+  max-width: 50%;
+}
+
+input[type=number] {
+  width: 2rem;
+  text-align: center;
+  border-radius: 1px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+
+input[type=number] {
+  -moz-appearance: textfield !important;
 }
 
 @media (max-width: 768px) {
-  h1 {
+  .container-fluid header h1 {
     left: 25vw;
   }
 
-  h3 {
+  .container-fluid header h3 {
     left: 30vw;
   }
 }
 @media (max-width: 576px) {
-  h1 {
+  .container-fluid header h1 {
     left: 15vw;
   }
 
-  h3 {
+  .container-fluid header h3 {
     left: 20vw;
+  }
+}
+@media (max-height: 450px) {
+  .container-fluid header h1 {
+    font-size: 3.5rem;
+  }
+
+  .container-fluid header h3 {
+    font-size: 1.5rem;
+    padding-top: 4rem;
+  }
+}
+@media (max-height: 300px) {
+  .container-fluid header h1 {
+    font-size: 2.5rem;
+  }
+
+  .container-fluid header h3 {
+    font-size: 1rem;
+    padding-top: 3rem;
   }
 }
 
