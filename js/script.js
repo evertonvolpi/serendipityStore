@@ -18,6 +18,10 @@ document.querySelectorAll('.addToCart').forEach(item => {
     item.addEventListener('click', addToCart);
 });
 
+document.querySelectorAll('.trash').forEach(item => {
+    item.addEventListener('click', trashItem);
+})
+
 
 function increase() {
     var product = this.getAttribute('product');
@@ -86,6 +90,15 @@ function addToCart() {
     cartTotal();
 };
 
+function trashItem() {
+    var product = this.getAttribute('product');
+    document.querySelector(`#${product}CQty`).innerHTML = 0;
+    document.querySelector(`#${product}CTotal`).innerHTML = 0.0;
+    document.querySelector(`#${product}Cart`).classList.add('hide');
+
+    cartTotal();
+}
+
 function changeItemTotal(quantity, price, item) {
     var total = quantity * price;
     item.innerHTML = total.toFixed(2);
@@ -100,9 +113,12 @@ function cartTotal() {
         parseFloat(document.querySelector('#garlicCTotal').innerHTML)
     );
     
-    var shipping = (totalProducts * 0.05);
-    if (shipping < 8.0) {
-        shipping = 8.0;
+    var shipping = 0.0;
+    if (totalProducts > 0) {
+        shipping = (totalProducts * 0.05);
+        if (shipping < 8.0) {
+            shipping = 8.0;
+        }
     }
     
     var total = (totalProducts + shipping);

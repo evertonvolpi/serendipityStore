@@ -12,6 +12,10 @@ $darkBlue: hsl(201, 43%, 23%);
     padding: 0;
 }
 
+i {
+    color: $darkBlue !important;
+}
+
 html {
     background-color: $light;
 }
@@ -138,7 +142,7 @@ html {
 
 .container-fluid .cart .productCart {
     display: grid;
-    grid-template-columns: 2fr 5fr 1fr 2fr;
+    grid-template-columns: 2fr 4fr 2fr 1fr 2fr;
     margin: 0.5rem;
     height: 1.5rem;
     border-bottom: 0.1px solid $dark;
@@ -146,6 +150,10 @@ html {
 
 .container-fluid .cart .productCart .cartImg img {
     max-width: 50%;
+}
+
+.container-fluid .cart .productCart .trash:hover {
+    transform: scale(1.1);
 }
 
 .container-fluid .cart .shipping {
@@ -257,7 +265,7 @@ input[type=number] {
 
 .container-fluid footer .tools i {
     padding: 0.3rem;
-    color: $light;
+    color: $light !important;
 }
 
 @media (max-width: 768px) {
