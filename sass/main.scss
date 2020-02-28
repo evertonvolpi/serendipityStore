@@ -302,10 +302,13 @@ input[type=number] {
 @media (max-width: 576px) {
     .container-fluid header h1 {
         left: 15vw;
+        font-size: 3.5rem;
     }
 
     .container-fluid header h3 {
         left: 20vw;
+        font-size: 1.5rem;
+        padding-top: 4rem;
     }
 
     .container-fluid main .products .selection .radioButtons {
