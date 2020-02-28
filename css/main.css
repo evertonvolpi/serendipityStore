@@ -12,6 +12,10 @@ html {
   display: none;
 }
 
+.container-fluid #cart .hide {
+  display: none;
+}
+
 .container-fluid {
   padding: 0px !important;
   margin: 0px !important;
@@ -100,7 +104,8 @@ html {
   text-align: center;
 }
 
-.container-fluid .hideShowCart {
+.container-fluid .showCart,
+.container-fluid .cart {
   text-decoration: none;
   color: #394146;
 }
@@ -110,6 +115,8 @@ html {
 }
 
 .container-fluid .showCart {
+  position: sticky;
+  top: 0;
   float: right;
   padding-right: 1rem;
 }
@@ -121,8 +128,38 @@ html {
   font-family: "Amatic SC";
   background-color: white;
   box-shadow: 0 0 10px #394146;
-  height: 15rem;
+  height: 17rem;
   width: 15rem;
+}
+
+.container-fluid .cart i {
+  padding-left: 0.3rem;
+}
+
+.container-fluid .cart .productCart {
+  display: grid;
+  grid-template-columns: 2fr 5fr 1fr 2fr;
+  margin: 0.5rem;
+  height: 1.5rem;
+  border-bottom: 0.1px solid #394146;
+}
+
+.container-fluid .cart .productCart .cartImg img {
+  max-width: 50%;
+}
+
+.container-fluid .cart .shipping {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+  height: 1.5rem;
+}
+
+.container-fluid .cart .cartTotal {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  margin: 0.5rem;
+  height: 1.5rem;
 }
 
 .container-fluid main .about {
@@ -147,6 +184,11 @@ html {
 
 .container-fluid main .products .selection img {
   max-width: 50%;
+}
+
+.container-fluid main .products .increase:hover,
+.container-fluid main .products .decrease:hover {
+  transform: scale(1.1);
 }
 
 .container-fluid main .products .selection .radioButtons {

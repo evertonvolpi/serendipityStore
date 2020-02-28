@@ -40,12 +40,53 @@
         </header>
 
         <div class="showCart">
+            <i class="fas fa-angle-double-left"></i>
             <i class="hideShowCart fas fa-shopping-cart"></i>
         </div>
         
         <div class="cart hide" id="cart">
             <i class="hideShowCart fas fa-shopping-cart"></i>
-            <p>this product</p>
+            <i class="fas fa-angle-double-right"></i>
+            <div>
+                <div id="panetoneChocCart" class="hide productCart">
+                    <div class="cartImg"><img src="img/panetone.png" alt="panetone cake"></div>
+                    <div class="cartName"><p>Choco. Panetone</p></div>
+                    <div class="cartQty"><p id="panetoneChocCQty">0</p></div>
+                    <div class="cartValue"><p>&#x24 <span id="panetoneChocCTotal">0.0</span></p></div>
+                </div>
+                <div id="panetoneFruitCart" class="hide productCart">
+                    <div class="cartImg"><img src="img/panetone.png" alt="panetone cake"></div>
+                    <div class="cartName"><p>Fruit Panetone</p></div>
+                    <div class="cartQty"><p id="panetoneFruitCQty">0</p></div>
+                    <div class="cartValue"><p>&#x24 <span id="panetoneFruitCTotal">0.0</span></p></div>
+                </div>
+                <div id="dijonCart" class="hide productCart">
+                    <div class="cartImg"><img src="img/dinjonBread.png" alt="dijon bread"></div>
+                    <div class="cartName"><p>Dijon Bread</p></div>
+                    <div class="cartQty"><p id="dijonCQty">0</p></div>
+                    <div class="cartValue"><p>&#x24 <span id="dijonCTotal">0.0</span></p></div>
+                </div>
+                <div id="pestoCart" class="hide productCart">
+                    <div class="cartImg"><img src="img/pestoBread.png" alt="pesto bread"></div>
+                    <div class="cartName"><p>Pesto Bread</p></div>
+                    <div class="cartQty"><p id="pestoCQty">0</p></div>
+                    <div class="cartValue"><p>&#x24 <span id="pestoCTotal">0.0</span></p></div>
+                </div>
+                <div id="garlicCart" class="hide productCart">
+                    <div class="cartImg"><img src="img/garlicBread.png" alt="garlic bread"></div>
+                    <div class="cartName"><p>Garlic Bread</p></div>
+                    <div class="cartQty"><p id="garlicCQty">0</p></div>
+                    <div class="cartValue"><p>&#x24 <span id="garlicCTotal">0.0</span></p></div>
+                </div>
+                <div class="shipping">
+                    <div><i class="fas fa-shipping-fast"></i></div>
+                    <div><p>&#x24 <span id="shipping">0.0</span></p></div>
+                </div>
+                <div class="cartTotal">
+                    <div><p>Total</p></div>
+                    <div><p>&#x24 <span id="cartTotal">0.0</span></p></div>
+                </div>
+            </div>
         </div>
 
         <main class="container">            
@@ -61,21 +102,21 @@
                         <p>Italian pastry that tastes like christmas! What do you prefer: chocolate or the classic milanese dried fruit panetone? Why not both!</p>
                         <div class="radioButtons">
                             <div>
-                                <input type="radio" name="flavour" value="chocolate" id="chocolate" checked>
+                                <input type="radio" name="panetone" value="Choc" checked>
                                 <label for="chocolate">Chocolate</label>
                             </div>
                             <div>
-                                <input type="radio" name="flavour" value="driedFruits" id="driedFruits">
+                                <input type="radio" name="panetone" value="Fruit">
                                 <label for="driedFruits">Dried Fruits</label>
                             </div>
                         </div>
                         <div class="quantity">
-                            <i class="decrease fas fa-minus" product="qtyPanetone" refreshValue="totalPanetone"></i>
-                            <input type="number" name="quantity" class="changeQty" id="qtyPanetone" min="1" value="1" refreshValue="totalPanetone">
-                            <i class="increase fas fa-plus" product="qtyPanetone" refreshValue="totalPanetone"></i>
-                            <p>&#x24 <span id="totalPanetone" price="20.35">20.35</span></p>
+                            <i class="decrease fas fa-minus" product="panetone"></i>
+                            <input type="number" name="quantity" class="changeQty" id="panetoneQty" min="1" value="1" product="panetone">
+                            <i class="increase fas fa-plus" product="panetone"></i>
+                            <p>&#x24 <span id="panetoneTotal" price="20.35">20.35</span></p>
                         </div>
-                        <i class="addToCart fas fa-cart-plus" ></i>
+                        <i class="addToCart panetone fas fa-cart-plus" product="panetone"></i>
                     </div>
 
                     <div id="dijon">
@@ -84,12 +125,12 @@
                         <p>Delicious dijon mustard bread. Try not to eat it all at once, I dare you!</p>
                         <div class="buyDijon">
                             <div class="quantity">
-                                <i class="decrease fas fa-minus" product="qtyDijon" refreshValue="totalDijon"></i>
-                                <input type="number" name="quantity" class="changeQty" id="qtyDijon" min="1" value="1" refreshValue="totalDijon">
-                                <i class="increase fas fa-plus" product="qtyDijon" refreshValue="totalDijon"></i>
-                                <p>&#x24 <span id="totalDijon" price="11.75">11.75</span></p>
+                                <i class="decrease fas fa-minus" product="dijon"></i>
+                                <input type="number" name="quantity" class="changeQty" id="dijonQty" min="1" value="1" product="dijon">
+                                <i class="increase fas fa-plus" product="dijon"></i>
+                                <p>&#x24 <span id="dijonTotal" price="11.75">11.75</span></p>
                             </div>
-                            <i class="addToCart fas fa-cart-plus" ></i>
+                            <i class="addToCart fas fa-cart-plus" product="dijon"></i>
                         </div>
                     </div>
 
@@ -99,12 +140,12 @@
                         <p>Prepared with fresh ingredients. Believe it when we say our pesto is the besto! Yes pun intended.</p>
                         <div class="buyPesto">
                             <div class="quantity">
-                                <i class="decrease fas fa-minus" product="qtyPesto" refreshValue="totalPesto"></i>
-                                <input type="number" name="quantity" class="changeQty" id="qtyPesto" min="1" value="1" refreshValue="totalPesto">
-                                <i class="increase fas fa-plus" product="qtyPesto" refreshValue="totalPesto"></i>
-                                <p>&#x24 <span id="totalPesto" price="14.30">14.30</span></p>
+                                <i class="decrease fas fa-minus" product="pesto"></i>
+                                <input type="number" name="quantity" class="changeQty" id="pestoQty" min="1" value="1" product="pesto">
+                                <i class="increase fas fa-plus" product="pesto"></i>
+                                <p>&#x24 <span id="pestoTotal" price="14.30">14.30</span></p>
                             </div>
-                            <i class="addToCart fas fa-cart-plus" ></i>
+                            <i class="addToCart fas fa-cart-plus" product="pesto"></i>
                         </div>
                     </div>
 
@@ -114,12 +155,12 @@
                         <p>If you are not a vampire, you will - you will - fall in love with these bad boys, we guarantee.</p>
                         <div class="buyGarlic">
                             <div class="quantity">
-                                <i class="decrease fas fa-minus" product="qtyGarlic" refreshValue="totalGarlic"></i>
-                                <input type="number" name="quantity" class="changeQty" id="qtyGarlic" min="1" value="1" refreshValue="totalGarlic">
-                                <i class="increase fas fa-plus" product="qtyGarlic" refreshValue="totalGarlic"></i>
-                                <p>&#x24 <span id="totalGarlic" price="11.75">11.75</span></p>
+                                <i class="decrease fas fa-minus" product="garlic"></i>
+                                <input type="number" name="quantity" class="changeQty" id="garlicQty" min="1" value="1" product="garlic">
+                                <i class="increase fas fa-plus" product="garlic"></i>
+                                <p>&#x24 <span id="garlicTotal" price="11.75">11.75</span></p>
                             </div>
-                            <i class="addToCart fas fa-cart-plus" ></i>
+                            <i class="addToCart fas fa-cart-plus" product="garlic"></i>
                         </div>
                     </div>
                 </div>

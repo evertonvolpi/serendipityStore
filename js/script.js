@@ -14,43 +14,113 @@ document.querySelectorAll('.hideShowCart').forEach(item => {
     item.addEventListener('click', showHideCart);
 });
 
+document.querySelectorAll('.addToCart').forEach(item => {
+    item.addEventListener('click', addToCart);
+});
+
+
 function increase() {
-    var quantity = document.querySelector(`#${this.getAttribute('product')}`).value;
-    var item = document.querySelector(`#${this.getAttribute('refreshValue')}`);
+    var product = this.getAttribute('product');
+    var quantity = document.querySelector(`#${product}Qty`).value;
+    var item = document.querySelector(`#${product}Total`);
+    var price = parseFloat(item.getAttribute('price'));
     quantity++;
-    changeItemTotal(quantity, item);
-    document.querySelector(`#${this.getAttribute('product')}`).value = quantity;
-}
+    changeItemTotal(quantity, price, item);
+    document.querySelector(`#${product}Qty`).value = quantity;
+};
 
 function decrease() {
-    var quantity = document.querySelector(`#${this.getAttribute('product')}`).value;
-    var item = document.querySelector(`#${this.getAttribute('refreshValue')}`);
+    var product = this.getAttribute('product');
+    var quantity = document.querySelector(`#${product}Qty`).value;
+    var item = document.querySelector(`#${product}Total`);
+    var price = parseFloat(item.getAttribute('price'));
     if(quantity <= 1) {
         quantity = 1;
     }
     else {
         quantity--
-        changeItemTotal(quantity, item)
+        changeItemTotal(quantity, price, item)
     }
-    document.querySelector(`#${this.getAttribute('product')}`).value = quantity;
-}
+    document.querySelector(`#${product}Qty`).value = quantity;
+};
 
 function quantityInput() {
     if (this.value < 1) {
         this.value = 1;
     }
     var quantity = this.value;
-    var item = document.querySelector(`#${this.getAttribute('refreshValue')}`);
-    changeItemTotal(quantity, item);    
-}
+    var item = document.querySelector(`#${this.getAttribute('product')}Total`);
+    var price = parseFloat(item.getAttribute('price'));
+    changeItemTotal(quantity, price, item);    
+};
 
 function showHideCart() {
     document.querySelector('#cart').classList.toggle('hide');
     document.querySelector('.showCart').classList.toggle('hide');
-}
+};
 
-function changeItemTotal(quantity, item) {
-    var price = parseFloat(item.getAttribute('price'));
+function addToCart() {
+    var product = this.getAttribute('product');
+
+    if(product == 'panetone') {
+        var flavour = document.querySelector(`input[name='${this.getAttribute('product')}']:checked`).value;
+        var quantity = document.querySelector(`#${product}Qty`).value;
+        var price = document.querySelector(`#${product}Total`).getAttribute('price');        
+        product = `panetone${flavour}`;
+    }
+    else {
+        var quantity = document.querySelector(`#${product}Qty`).value;
+        var price = document.querySelector(`#${product}Total`).getAttribute('price');
+    }
+
+    document.querySelector(`#${product}Cart`).classList.remove('hide');
+
+    var cartQuantity = document.querySelector(`#${product}CQty`).innerHTML;
+    var item = document.querySelector(`#${product}CTotal`);
+    var newQuantity = parseInt(quantity) + parseInt(cartQuantity);
+
+    document.querySelector(`#${product}CQty`).innerHTML = newQuantity;
+
+    changeItemTotal(newQuantity, price, item);
+    
+    cartTotal();
+};
+
+function changeItemTotal(quantity, price, item) {
     var total = quantity * price;
     item.innerHTML = total.toFixed(2);
-}
+};
+
+function cartTotal() {
+    var totalProducts = (
+        parseFloat(document.querySelector('#panetoneChocCTotal').innerHTML) +
+        parseFloat(document.querySelector('#panetoneFruitCTotal').innerHTML) +
+        parseFloat(document.querySelector('#dijonCTotal').innerHTML) +
+        parseFloat(document.querySelector('#pestoCTotal').innerHTML) +
+        parseFloat(document.querySelector('#garlicCTotal').innerHTML)
+    );
+    
+    var shipping = (totalProducts * 0.05);
+    if (shipping < 8.0) {
+        shipping = 8.0;
+    }
+    
+    var total = (totalProducts + shipping);
+
+    document.querySelector('#shipping').innerHTML = shipping.toFixed(2);
+    document.querySelector('#cartTotal').innerHTML = total.toFixed(2);
+};
+
+function shippingTotal() {
+    var total = (
+        parseInt(document.querySelector('panetoneChocCQty')) +
+        parseInt(document.querySelector('panetoneFruitCQty')) +
+        parseInt(document.querySelector('dijonCQty')) +
+        parseInt(document.querySelector('pestoCQty')) +
+        parseInt(document.querySelector('garlicCQty'))
+    ) * 0.05;
+    if (total < 8) {
+        total = 8.0;
+    }
+    return(total.toFixed(2));
+};
