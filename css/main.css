@@ -124,7 +124,7 @@ html {
   font-family: "Amatic SC";
   background-color: white;
   box-shadow: 0 0 10px #394146;
-  height: 17rem;
+  height: 19rem;
   width: 15rem;
 }
 
@@ -160,6 +160,27 @@ html {
   grid-template-columns: 8fr 2fr;
   margin: 0.5rem;
   height: 1.5rem;
+}
+
+.container-fluid .cart .checkout {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  background-color: #394146;
+  margin: 0.5rem;
+  height: 1.5rem;
+}
+
+.container-fluid .cart .checkout i {
+  color: #edf2f1 !important;
+}
+
+.container-fluid .cart .checkout a {
+  text-decoration: none !important;
+  color: #edf2f1;
+}
+
+.container-fluid .cart .checkout a:hover {
+  font-weight: bold;
 }
 
 .container-fluid main .about {
