@@ -8,8 +8,8 @@ $blue: hsl(201, 43%, 43%);
 $darkBlue: hsl(201, 43%, 23%);
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -25,8 +25,8 @@ html {
 }
 
 .container-fluid {
-    padding: 0px !important;
-    margin: 0px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     background-color: $light;
 }
 
@@ -60,14 +60,6 @@ html {
 
 .navbar .navbar-nav .nav-item .nav-link:hover {
     color: $dark;
-}
-
-.navbar .navbar-nav .nav-item.active .nav-link {
-    color: $darkBlue;
-    border-bottom: 2px solid $darkBlue;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .container-fluid header {
@@ -118,7 +110,7 @@ html {
     color: $dark;
 }
 
-.container-fluid .hideShowCart:hover {
+.container-fluid .cartIcon:hover {
     transform: scale(1.1);
 }
 
@@ -237,6 +229,35 @@ input[type=number] {
 
 .container-fluid main .products .selection .addToCart:hover {
     transform: scale(1.1);
+}
+
+.container-fluid footer {
+    background-color: $darkBlue;
+}
+
+.container-fluid .footerContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container-fluid footer p {
+    font-family: 'Spartan';
+    color: $light;
+    font-size: 0.4rem;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.container-fluid footer .tools {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-fluid footer .tools i {
+    padding: 0.3rem;
+    color: $light;
 }
 
 @media (max-width: 768px) {

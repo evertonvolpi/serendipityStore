@@ -110,17 +110,3 @@ function cartTotal() {
     document.querySelector('#shipping').innerHTML = shipping.toFixed(2);
     document.querySelector('#cartTotal').innerHTML = total.toFixed(2);
 };
-
-function shippingTotal() {
-    var total = (
-        parseInt(document.querySelector('panetoneChocCQty')) +
-        parseInt(document.querySelector('panetoneFruitCQty')) +
-        parseInt(document.querySelector('dijonCQty')) +
-        parseInt(document.querySelector('pestoCQty')) +
-        parseInt(document.querySelector('garlicCQty'))
-    ) * 0.05;
-    if (total < 8) {
-        total = 8.0;
-    }
-    return(total.toFixed(2));
-};

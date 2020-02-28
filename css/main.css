@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC|Sacramento|Spartan&display=swap");
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -17,8 +17,8 @@ html {
 }
 
 .container-fluid {
-  padding: 0px !important;
-  margin: 0px !important;
+  padding: 0 !important;
+  margin: 0 !important;
   background-color: #edf2f1;
 }
 
@@ -52,14 +52,6 @@ html {
 
 .navbar .navbar-nav .nav-item .nav-link:hover {
   color: #394146;
-}
-
-.navbar .navbar-nav .nav-item.active .nav-link {
-  color: #214254;
-  border-bottom: 2px solid #214254;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .container-fluid header {
@@ -110,7 +102,7 @@ html {
   color: #394146;
 }
 
-.container-fluid .hideShowCart:hover {
+.container-fluid .cartIcon:hover {
   transform: scale(1.1);
 }
 
@@ -229,6 +221,35 @@ input[type=number] {
 
 .container-fluid main .products .selection .addToCart:hover {
   transform: scale(1.1);
+}
+
+.container-fluid footer {
+  background-color: #214254;
+}
+
+.container-fluid .footerContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container-fluid footer p {
+  font-family: "Spartan";
+  color: #edf2f1;
+  font-size: 0.4rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.container-fluid footer .tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container-fluid footer .tools i {
+  padding: 0.3rem;
+  color: #edf2f1;
 }
 
 @media (max-width: 768px) {
